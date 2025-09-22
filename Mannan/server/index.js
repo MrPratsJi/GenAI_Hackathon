@@ -109,4 +109,4 @@ app.get('/api/exercises', (req, res) => {
   res.json({ items: pack });
 });
 
-export default app;
+module.exports = app;
