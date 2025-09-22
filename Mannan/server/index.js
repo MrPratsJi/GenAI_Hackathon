@@ -5,6 +5,13 @@ import { v4 as uuidv4 } from 'uuid';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import 'dotenv/config';
+import express from 'express';
+import cors from 'cors';
+import { v4 as uuidv4 } from 'uuid';
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 // Optional Vertex AI
 let vertexModel = null;
@@ -14,7 +21,7 @@ async function initVertex() {
   const project = process.env.GCLOUD_PROJECT;
   const location = process.env.GCP_LOCATION || 'us-central1';
   const modelName = process.env.VERTEX_MODEL || 'gemini-1.5-pro';
-  const { VertexAI } = await import('@google-cloud/vertexai');
+  const { VertexAI } = require('@google-cloud/vertexai');
   const vertex = new VertexAI({ project, location });
   return vertex.getGenerativeModel({ model: modelName });
 }
