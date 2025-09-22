@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Kiran (24x7)",
+    "phone": "1800-599-0019",
+    "langs": [
+      "hi",
+      "en"
+    ],
+    "notes": "National mental health helpline"
+  },
+  {
+    "name": "iCall (TISS)",
+    "phone": "+91-9152987821",
+    "langs": [
+      "hi",
+      "en"
+    ],
+    "notes": "Counseling helpline"
+  },
+  {
+    "name": "Vandrevala Foundation",
+    "phone": "+91-9999666555",
+    "langs": [
+      "en",
+      "hi"
+    ],
+    "notes": "24x7 support"
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "name": "mannmitra",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "server",
+    "web"
+  ],
+  "scripts": {
+    "dev": "concurrently -k -n API,WEB -c blue,magenta \"npm:dev-server\" \"npm:dev-web\"",
+    "dev-server": "npm --workspace server start",
+    "dev-web": "npm --workspace web run dev"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  }
+}

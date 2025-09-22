@@ -1,0 +1,15 @@
+{
+  "name": "Mannan",
+  "short_name": "Mannan",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b1220",
+  "theme_color": "#0b1220",
+  "icons": [
+    {
+  "src": "/icon.png",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

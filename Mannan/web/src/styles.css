@@ -1,0 +1,175 @@
+:root {
+  --bg1: #10151a;
+  --bg2: #1a2a23;
+  --panel: rgba(255,255,255,0.10);
+  --text: #fff;
+  --muted: #b5e3d8;
+  --accent1: #2de1c2;
+  --accent2: #176e62;
+  --accent3: #fff;
+  --accent4: #fff;
+  --card-hover: #2de1c2;
+
+:root {
+  --primary: #0a1929;
+  --secondary: #112240;
+  --accent: #00eaff;
+  --glass-bg: rgba(18, 32, 56, 0.82);
+  --glass-border: rgba(0, 234, 255, 0.12);
+  --text-main: #eaf6fb;
+  --text-secondary: #b2c7d9;
+  --btn-bg: linear-gradient(90deg, #00eaff 0%, #3a8dde 100%);
+  --btn-shadow: 0 2px 16px 0 #00eaff55;
+}
+
+body {
+  min-height: 100vh;
+  background: #0a1929;
+  color: var(--text-main);
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* Diagonal lines overlay */
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: repeating-linear-gradient(120deg, rgba(0,234,255,0.04) 0 2px, transparent 2px 80px);
+  pointer-events: none;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+}
+
+.glass {
+  background: var(--glass-bg);
+  border: 1.5px solid var(--glass-border);
+  border-radius: 32px;
+  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.24);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 48px 32px;
+  margin: 48px auto 0 auto;
+  max-width: 700px;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  background: linear-gradient(90deg, #eaf6fb 60%, #00eaff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 12px;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+  font-weight: 400;
+}
+
+.btn {
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.9em 2.2em;
+  border-radius: 2em;
+  border: none;
+  background: var(--btn-bg);
+  color: #fff;
+  box-shadow: var(--btn-shadow);
+  cursor: pointer;
+  transition: transform 0.18s, box-shadow 0.18s;
+  outline: none;
+  position: relative;
+  z-index: 1;
+}
+.btn:active {
+  transform: scale(0.97);
+}
+.btn.glow {
+  box-shadow: 0 0 16px 4px #00eaff88, 0 2px 16px 0 #00eaff55;
+  border: 1.5px solid #00eaff55;
+}
+
+@media (max-width: 600px) {
+  .glass {
+    padding: 32px 8px;
+    max-width: 98vw;
+  }
+  .hero-title {
+    font-size: 2.1rem;
+  }
+}
+}
+.gradient-text { color: #fff; font-weight: 700; letter-spacing: 0.5px; font-size: 3rem; line-height: 1.1; }
+.btn {
+  background: linear-gradient(90deg, var(--bg1) 0%, var(--bg2) 100%);
+  color: #fff;
+  padding: 14px 36px;
+  border-radius: 18px;
+  border: none;
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s, background 0.2s;
+  box-shadow: 0 2px 16px rgba(31,203,167,0.13);
+  font-weight: 600;
+  font-size: 1.15rem;
+  letter-spacing: 0.5px;
+}
+.btn:hover {
+  transform: translateY(-1px) scale(1.04);
+  box-shadow: 0 4px 32px rgba(31,203,167,0.22);
+  background: linear-gradient(90deg, var(--bg2) 0%, var(--bg1) 100%);
+}
+.btn.secondary {
+  background: rgba(255,255,255,0.13);
+  color: #fff;
+  border: 1.5px solid var(--bg1);
+}
+.grid { display: grid; gap: 18px; }
+.grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 900px) { .grid-3 { grid-template-columns: 1fr; } }
+.card { padding: 18px; }
+.badge {
+  font-size: 15px;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.13);
+  padding: 8px 28px;
+  border-radius: 999px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+.chat-wrap { display: grid; grid-template-rows: 1fr auto; height: 70vh; }
+.chat-log { overflow-y: auto; padding: 16px; }
+.msg { padding: 10px 14px; margin: 8px 0; max-width: 78%; border-radius: 14px; }
+.msg.user { background: rgba(6,182,212,.15); margin-left: auto; border: 1px solid rgba(6,182,212,.35); }
+.msg.assistant { background: rgba(124,58,237,.12); border: 1px solid rgba(124,58,237,.35); }
+.input-row { display: grid; grid-template-columns: 1fr auto; gap: 10px; padding: 12px; }
+.input {
+  padding: 16px 22px;
+  border-radius: 16px;
+  border: 1.5px solid rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.13);
+  color: #fff;
+  font-size: 1.08rem;
+  margin-bottom: 10px;
+}
+small.muted { color: var(--muted); }
+
+
+
+
+c:\Users\pratyush gupta\OneDrive\Pictures\Screenshots\Screenshot 2025-09-09 144312.png, c:\Users\pratyush gupta\OneDrive\Pictures\Screenshots\Screenshot 2025-09-09 144402.png , c:\Users\pratyush gupta\OneDrive\Pictures\Screenshots\Screenshot 2025-09-09 144423.png , c:\Users\pratyush gupta\OneDrive\Pictures\Screenshots\Screenshot 2025-09-09 144439.png , c:\Users\pratyush gupta\OneDrive\Pictures\Screenshots\Screenshot 2025-09-09 144458.png , c:\Users\pratyush gupta\OneDrive\Pictures\Screenshots\Screenshot 2025-09-09 144542.png use this and style my landing page like this with same colours , styling and placements\  
