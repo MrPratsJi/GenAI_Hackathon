@@ -3,7 +3,7 @@ import MoodWidget from './MoodWidget.jsx'
 import ExercisePanel from './ExercisePanel.jsx'
 import LoginModal from './LoginModal.jsx'
 
-const API = '/api'
+const API = import.meta.env.VITE_API_URL || '/api'
 
 export default function Chat() {
   const [sessionId, setSessionId] = useState(null)
