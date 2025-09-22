@@ -1,64 +1,84 @@
-# MannMitra — AI Companion for Youth Mental Wellness
 
-**Stack:** Node.js/Express (backend) + React (Vite) PWA (frontend)  
-**Runs locally without cloud credentials** using a safe mock. You can later plug in Vertex AI.
+# GenAI Hackathon — Mannan: AI Mental Wellness Companion
 
-## Quickstart (Local Dev)
-1) **Install dependencies**
-```bash
-cd server && npm install
-cd ../web && npm install
-```
-2) **Run backend** (mock mode by default)
-```bash
-cd server
-# Optional: create .env from example (only if you want Vertex AI)
-# cp .env.example .env  # then fill values and set USE_MOCK=0
-npm start
-```
-This starts the API at `http://localhost:8080`.
+## Overview
+Mannan is an AI-powered web application designed to support youth mental wellness. It provides confidential, empathetic chat, mood tracking, self-help exercises, and crisis helplines, all in a modern, bilingual interface.
 
-3) **Run frontend**
-```bash
-cd ../web
-npm run dev
-```
-Open the printed local URL (usually `http://localhost:5173`).
+## Features
+- Confidential, empathetic AI chat (English & Hindi)
+- Mood tracker (1–5 scale)
+- Self-help micro-exercises
+- Crisis helplines panel
+- Beautiful glassmorphism UI with gradients and subtle animations
+- PWA support (installable, offline-ready)
+- Easy local development and cloud-ready (Vertex AI integration)
 
-> If you want everything on one port, you can also run `npm run dev` in web which proxies API to 8080.
+## Tech Stack
+- **Frontend:** React (Vite), CSS (glassmorphism, gradients)
+- **Backend:** Node.js, Express
+- **AI:** Vertex AI (optional, mock mode by default)
+- **Auth:** Firebase Authentication (email/password)
+- **Other:** Service Worker, PWA manifest
+
+## Workflow
+1. **Install dependencies**
+  ```bash
+  cd server && npm install
+  cd ../web && npm install
+  ```
+2. **Run backend** (mock mode by default)
+  ```bash
+  cd server
+  npm start
+  ```
+  API runs at `http://localhost:8080`.
+3. **Run frontend**
+  ```bash
+  cd ../web
+  npm run dev
+  ```
+  Open `http://localhost:5173` in your browser.
+
+> For all-in-one dev, use `npm run dev` in web to proxy API to 8080.
+
+
+
 
 ## Optional: Enable Vertex AI (live LLM responses)
 - Requires a GCP project, service account with Vertex permissions, and `GOOGLE_APPLICATION_CREDENTIALS` set.
 - Set in `server/.env`:
-```
-USE_MOCK=0
-GCLOUD_PROJECT=your-project-id
-GCP_LOCATION=us-central1
-VERTEX_MODEL=gemini-1.5-pro
-```
+  ```
+  USE_MOCK=0
+  GCLOUD_PROJECT=your-project-id
+  GCP_LOCATION=us-central1
+  VERTEX_MODEL=gemini-1.5-pro
+  ```
 - Install gcloud auth or use a key file. Restart server.
 
-## What’s inside
-- **server/** Express API: `/api/chat`, `/api/mood`, `/api/helplines`, `/api/exercises`
-- **web/** Vite + React app with
-  - **Attractive landing page** (glassmorphism, gradients, subtle animations)
-  - **Chat** (empathetic, bilingual-ready)
-  - **Mood tracker** (1–5)
-  - **Self-help micro-exercises**
-  - PWA manifest + basic service worker
+
+## Project Structure
+- **server/** — Express API: `/api/chat`, `/api/mood`, `/api/helplines`, `/api/exercises`
+- **web/** — Vite + React app
+    - Landing page (glassmorphism, gradients, animations)
+    - Chat (empathetic, bilingual)
+    - Mood tracker
+    - Self-help exercises
+    - PWA manifest & service worker
+
 
 ## Security & Privacy
 - No PII by default. Session IDs on client only.
 - Mock mode keeps data in memory; production should use Firestore/DB.
 - This is **not** a medical device. Includes crisis helplines panel.
 
+
 ## Scripts
 - `server`: `npm start` to run on 8080
 - `web`: `npm run dev` for dev, `npm run build` then `npm run preview`
 
----
 
-Built to be extended easily for hackathons and demos.
+---
+Built for GenAI Hackathon. Easily extendable for demos and real-world use.
 
 
 ## One-command run (root workspace)
