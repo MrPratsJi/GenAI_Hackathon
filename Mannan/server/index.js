@@ -109,4 +109,4 @@ app.get('/api/exercises', (req, res) => {
   res.json({ items: pack });
 });
 
-app.listen(PORT, () => console.log(`Mannan API running on http://localhost:${PORT} (mock=${USE_MOCK})`));
+export default app;
