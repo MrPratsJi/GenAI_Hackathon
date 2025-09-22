@@ -1,17 +1,10 @@
-import 'dotenv/config';
-import express from 'express';
-import cors from 'cors';
-import { v4 as uuidv4 } from 'uuid';
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
-import 'dotenv/config';
-import express from 'express';
-import cors from 'cors';
-import { v4 as uuidv4 } from 'uuid';
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
+require('dotenv/config');
+const express = require('express');
+const cors = require('cors');
+const { v4: uuidv4 } = require('uuid');
+const fs = require('fs');
+const path = require('path');
+const { fileURLToPath } = require('url');
 
 // Optional Vertex AI
 let vertexModel = null;
